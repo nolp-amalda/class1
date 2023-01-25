@@ -1,0 +1,199 @@
+@charset "UTF-8";
+*{margin: 0; padding: 0;}
+
+body{background-color: lightgray;}
+
+.box1{
+  background-color: #fff;
+  margin-top: 100px;
+}
+.box1 .child{
+  width: 300px;
+  background-color: orangered;
+  margin: 0 auto;
+  padding: 30px 0;
+  font-size: 30px;
+  color: #fff;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 20px;
+  border: 10px solid orangered;
+  
+ /*  transition-property: background-color;
+  transition-duration: 0.3s;
+  transition-delay: 0.5s;
+  transition-timing-function: ease; */
+  /* transition: background-color 0.3s 0.5s ease,
+  transform 0.4s 0.8s ease; */
+  /* transition:  all 0.3s 0.2s ease; */
+  /* transition: 0.3s 0.2s ease; */
+  transition:0.3s;
+  
+}
+
+.box1:hover .child{
+  background-color: purple;
+  transform: translateY(-30px) ;
+}
+
+.box2{
+  width: 400px;
+  margin: 50px auto 0;
+  background-color: aquamarine;
+  color: #222;
+  text-align: center;
+  line-height: 2.5;
+  overflow: hidden;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 500;
+}
+.box2 p{
+  transform: translateX(-100%);
+  transition: 0.5s;
+}
+.box2 p.one{transition-delay: 0.3s;}
+.box2 p.two{transition-delay: 0.6s;}
+.box2 p.three{transition-delay: 0.9s;}
+.box2:hover p{
+  transform: translateX(0%);
+}
+.box3 {
+    background-color: chocolate;
+    font-size:30px;
+    color:cadetblue;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    margin-top: 50px;
+    
+/*    애니메이션의 이름* keyframes 이름과 반드시 동일해야함/*/
+    animation-name: box_ani;
+    
+/*    애니메이션 지속 시간*/
+    animation-duration: 2s;
+    
+/*    애니메이션 반복횟수, infinite 무한반복*/
+    animation-iteration-count: infinite;
+    
+    방향이 
+    animation-direction: alternate
+    
+}
+
+@keyframes box_ani{
+/*    시작지점
+    from {margin-left: 300px}
+/*    도착지점*/
+    to {margin-left: 600px}
+    
+}
+.box4 {
+    background-color: chocolate;
+    font-size:30px;
+    color:brown;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+    margin-top: 50px;
+    animation-name: box_ani2;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+
+
+    
+}
+@keyframes box_ani2{
+    0%{transform: translate(100px,0);}
+    25%{transform: translate(200px,0);}
+    50%{transform: translate(300px,0);}
+    75%{transform: translate(400px,0);}
+    100%{transform: translate(500px,0);}
+}
+
+.약::after{content:"";
+    clear:both;
+    display:block;
+}
+
+.box5{
+      width: 1000px;
+    height: 300px;
+    background-color: dimgray;
+    padding: 20px;
+    margin: 0 auto;
+    perspective: 600px;
+}
+.box5>div{
+    float:left;
+    width: 49%;
+    height: 300px;
+    background-color: aqua
+}
+.box5>div.child_1{
+    margin-right: 2%;
+    position: relative;
+    transform-style: preserve-3d;
+}
+
+.box5>div.child_1 .ro{
+    background-color: violet;
+    position: absolute;
+    left: 60%; top: 40%;
+    padding: 20px 30px;
+    font-size: 20px;
+    color: #fff;
+    transform: translateZ(300px) rotateY(45deg); 
+/*    deg는 degree의 약자
+    
+    */
+}
+
+.box5>div.child_2{
+    position: relative;
+    transform-style: preserve-3d;
+}
+
+.box5>div.child_2 .top{
+    position: absolute;
+    left: 20%; top: 20%;
+    padding: 20px 30px;
+    font-size: 40px;
+    color: #fff;
+}
+    
+
+.box5>div.child_2 .top div{
+    transform: translateY(100%) rotateX(-80deg);
+    transform-origin: center top;
+    opacity: 0;
+    transition: 0.8s cubic-bezier(0.05, 0.15, 0.09, 1.09);
+    }
+
+.box5>div.child_2:hover .top div{
+    opacity: 1;
+    transform: none;
+    transition-delay: 0.2s;
+    
+}
+
+.box5>div.child_2:hover .top div:first-child{
+/*    top의 자식중 첫째*/
+    
+}
+.box5>div.child_2:hover .top div:last-child{
+/*    top의 자식중 막내*/
+    transition-delay: 0.4s;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
